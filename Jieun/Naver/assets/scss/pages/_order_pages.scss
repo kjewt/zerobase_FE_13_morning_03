@@ -1,0 +1,22 @@
+.container {
+    padding-top: $place-header-height + $place-tab-height;
+    padding-bottom: $order-box-area-height;
+    background-color: $booking-color-border151;    
+}
+
+.common-inner {
+    margin: 0 auto;
+    max-width: 720px;
+    // 가운데 정렬 시키는 방법 &최대 넓이
+}
+
+.badge-popular {
+    display: inline-block;
+    padding: 0 5px;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 700;
+    background-color: #ff61a7;
+    color: white;
+}

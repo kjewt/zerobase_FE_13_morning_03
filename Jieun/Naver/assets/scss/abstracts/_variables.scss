@@ -1,0 +1,11 @@
+// font
+$font-default: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, sans-serif;
+
+// size
+$m-padding: 18px;
+    // 모바일 패딩 사이즈는 18이다.
+$place-header-height: 48px;
+$place-tab-height: 46px;
+$header-height: $place-header-height + $place-tab-height;
+
+$order-box-area-height: 70px;

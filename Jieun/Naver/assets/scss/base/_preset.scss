@@ -1,0 +1,24 @@
+.screen-out {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.scroll-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    //pc보다는 모바일에서 주로 사용함. 터치를 사용하는 디바이스에서 가속도 붙은 스크롤 가능함
+    -ms-overflow-scrolling: touch;
+    //^ms에서 감추기
+    scrollbar-width: none;
+    //^firefox에서 감추기
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    //^이건 chrome에서 감추기
+}

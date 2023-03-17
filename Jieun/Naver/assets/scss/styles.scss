@@ -1,0 +1,35 @@
+
+// abstracts
+@import "./abstracts/variables_color";
+@import "./abstracts/variables";
+@import "./abstracts/mixin_common";
+
+
+
+//base
+@import "./base/reset";
+@import "./base/preset";
+
+//components 공통
+@import "./components/header_area";
+@import "./components/menu_item";
+@import "./components/amount_select";
+
+//components  menu
+@import "./components/menu/order_type";
+@import "./components/menu/order-info-area";
+@import "./components/menu/recent_order_area";
+@import "./components/menu/menu_category_area";
+@import "./components/menu/menu_list_area";
+@import "./components/menu/menu_item";
+@import "./components/menu/order_box_area";
+@import "./components/menu/go_to_top";
+
+// components  detail
+
+@import "./components/detail/menu_detail_area";
+@import "./components/detail/menu_review_area";
+@import "./components/detail/option_popup_area";
+
+// pages
+@import "./pages/order_pages";

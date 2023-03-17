@@ -1,0 +1,24 @@
+@mixin ellipsis {
+    text-overflow: ellipsis;
+    white-space: none;
+    overflow: hidden;
+    //ellipse는 생략이라는 뜻, 말줄임표를 만들 때 씀
+    //whitespace는 길게 뚫고 나가는 것, nowrap은 뚫고 나가는 것 뚫고 나가는걸 hidden으로 감춤
+    //1줄이 넘어갈 때 '...'으로 처리 가능한 것
+}
+
+@mixin multi-ellipsis($font-size, $line-height, $lines) {
+    //사용 시, 괄호 안 값은 폰트사이즈와 라인하이트 값 적고 몇 라인 넘어가면 '...'처리할 것인지 적음
+    //line height는 몇 줄까지인지를 계산하기 위한 것.
+    font-size: $font-size;
+    line-height: $line-height;
+    max-height: $line-height * $lines;
+    
+    overflow: hidden;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    //몇 줄 받을 것인지?
+    -webkit-box-orient: vertical; /* autoprefixer: off */ 
+    //웹킷 오류라고함... 위에 주석 처리하면 수정된다는데 나는 없어도 정상 작동 됨..
+}

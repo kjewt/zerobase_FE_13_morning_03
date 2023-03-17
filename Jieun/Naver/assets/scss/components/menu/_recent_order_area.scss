@@ -1,0 +1,112 @@
+.recent-order-area {
+    display: flex;
+    margin-top: 16px;
+    padding: 18px 0;
+    border-radius: 2px;
+    background-color: #fff;
+    
+    .recent-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        //찌그런지는 것을 방지하겠다! (본래 가지고 있는 너비 값을 유지시킴)
+        padding: 8px 8px;
+        border-right: 1px solid $booking-color-bg102;
+        line-height: 1.42;
+        font-size: 12px;
+        font-weight: 700;
+        color: $booking-color-text6;
+        .ico-clock {
+            margin-bottom: 4px;
+            width: 14px;
+        }
+    }
+
+    .recent-menu-list {
+        display: flex;
+    }
+
+    .recent-menu-item {
+        box-sizing: content-box;
+        position: relative;
+        padding-right: 16px;
+        width: 80px;
+        text-align: center;
+        &.is-ordered {
+            padding-left: 16px;
+            border-right: 1px solid $booking-color-bg102;
+            & + .recent-menu-item {
+                padding-left: 16px;
+            }
+        }
+
+        &:last-child {
+            padding-right: $m-padding;
+        }
+    }
+
+    .menu-img-area {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border: 1px solid $booking-color-border149;
+        border-radius: 100%;
+        background-color: (0,0,0,0.01);
+
+    }
+
+    .badge-popular {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 5px;
+        border-radius: 10px;
+        line-height: 16px;
+        font-size: 11px;
+        font-weight: 700;
+        background-color: #ff61a7;
+        color: #fff;
+
+    }
+
+    .menu-img {
+        width: 100%;
+        height:100%;
+        border-radius: 100%;
+
+    }
+
+    .badge-cart {
+        position: absolute;
+        top: 50px;
+        right: 16px;
+        display: flex;
+        padding: 6px;
+        border: 1px solid $booking-color-border150;
+        // 중요한 것은 부모 요소에 relative를 줘서 기준점으로 잡고 '인기'뱃지를 left top으로 붙이고 카트 뱃지를 right bottom에 붙인게 중요
+        border-radius: 100%;
+        //매번 타원을 만드는 것은 아님. 1;1비율을 가지는 요소만 원이 되는 것. 원본의 비율이 중요함. 
+        background-color: $booking-color-bg8;
+    }
+
+    .ico-cart {
+        width: 16px;
+        height: 16px;
+    }
+
+    .menu-name {
+        margin-top: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        @include ellipsis;
+    }
+
+    .menu-price {
+        font-size: 13px;
+        font-weight: 700;
+        color: $point-color;
+        @include ellipsis;
+    }
+}
