@@ -1,0 +1,18 @@
+@mixin btn-cursor {
+  user-select: none;
+  cursor: pointer;
+}
+
+@mixin btn-footer {
+  height: 32px;
+  padding: 0 16px;
+  background-color: #3a3a3a;
+  border: none;
+  border-radius: 16px;
+
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: -0.3px;
+
+  @include btn-cursor;
+}
