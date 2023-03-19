@@ -1,0 +1,165 @@
+body {
+  background-color: #c6c6c6;
+  margin: 0px;
+}
+
+.wrap {
+  background-color: white;
+  width: 375px;
+  height: 100vh; /* 1vh: 웹사이트의 세로 길이 100분의 1*/
+  margin: 0 auto; /* 0은 탑과 바텀에 해당, 좌우는 자동으로*/
+
+  display: flex;
+  align-items: center;
+}
+
+.instagram {
+  width: 100%;
+  height: 550px;
+  /* border: 1px solid black; */
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 375px 1fr;
+  grid-template-areas:
+  "header"
+  "img"
+  "footer";
+
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.header {
+  grid-area: header;
+  width: auto; /*margin 대비 삐죽 나온 부분 해결 위한 auto*/
+  height: auto;
+  margin: 5px 10px; /*위아래 좌우*/
+
+  font-weight: bold;
+}
+
+.header-left {
+  float: left;
+  display: flex; /*p태그 block 현상으로 줄바꿈되는 것을 해소 => 옆으로*/
+  align-items: center; /*글씨가 아이콘 기준 옆 중앙으로*/
+}
+
+.header-img {
+  border: 1px solid black;
+  border-radius: 50%; /*완전히 동그라미*/
+  margin-right: 10px; /*아이콘 사이 공간 부여*/
+}
+
+.header-right {
+  float: right;
+  height: 100%; /*세로로 정렬되도록*/
+
+  display: flex;
+  align-items: center;
+}
+
+.right-menu {
+  cursor: pointer;
+  user-select: none;
+}
+
+.img {
+  clear: both;
+  grid-area: img;
+  width: 100%;
+  height: 100%;
+
+  /* background-image: url(../img/한글프로필.png);
+  background-size: cover; 비율이 짤리더라도 1:1 정사각형 비율로 출력 */
+}
+
+.footer {
+  grid-area: footer;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50px auto auto;
+  grid-template-areas:
+  "top-left top-center top-right"
+  "like like like"
+  "comment comment comment";
+}
+
+.top-left {
+  grid-area: top-left;
+
+  /*아이콘 위치 조정*/
+  display: flex;
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around; /*각각에 사이에 공간*/
+}
+
+.top-left span {
+  cursor: pointer;
+}
+
+.top-left span:nth-of-type(1):hover {
+  color: red;
+}
+
+#fill-heart {
+  display: none;
+  fill: red;
+}
+
+.top-center {
+  grid-area: top-center;
+
+  /*다른 것들처럼 중앙으로 처리*/
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-right {
+  grid-area: top-right;
+
+  /*아이콘 위치 조정*/
+  display: flex;
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center; /*아이콘이 1개이므로 가운데에*/
+}
+
+.like {
+  grid-area: like;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.comment {
+  grid-area: comment;
+  font-size: 10px;
+  margin: 0 10px;
+}
+
+ul {
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 50%;
+}
+
+li {
+  width: 7px;
+  height: 7px;
+  background-color: lightgray;
+  border-radius: 50%;
+}

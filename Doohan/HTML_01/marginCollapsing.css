@@ -1,0 +1,31 @@
+.container_margin_test {
+  /* margin-top: 5rem; */
+  border: 1px solid black;
+}
+
+.child_margin_test {
+  margin-top: 5rem;
+  background-color: cornflowerblue;
+}
+
+h1 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  /* h1 사이에 10rem에 차이가 있어야 할 것 같은데,
+  실제로 구현된 화면에는 5rem만큼에 간격이 나타나고, 겹침이 일어남*/
+}
+
+p {
+  /* margin: 0px; */
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.zero {
+  /* 겹침 현상일 때, 마진 값이 큰 쪽으로 통합함 (2 > 1)*/
+  margin-bottom: 2rem;
+}
+
+.coding {
+  margin-top: 1rem;
+}
