@@ -1,0 +1,18 @@
+/* 여러 번 사용할 스타일 */
+
+/* margin top small*/
+.mt-sm {
+  margin-top: 25px;
+}
+
+/* margin top large*/
+.mt-lg {
+  margin-top: 50px;
+}
+
+.heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: black;
+  font-weight: 900;
+}

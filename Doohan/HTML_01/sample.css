@@ -1,0 +1,101 @@
+.container {
+  width: 400px;
+  height: 600px;
+  border: 1px solid black;
+  font-size: 0px; /* 글 공백으로 인한 줄바꿈 현상*/
+  color: white;
+  font-weight: bold;
+}
+
+.container2 {
+  width: 200px;
+  height: 100px;
+  border: 1px solid red;
+}
+
+.container2 p {
+  width: 158px;
+  margin: 20px 0px 5px 0px;
+  /* margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px; */
+
+  padding: 10px;
+  border: 1px solid blue;
+  display: inline-block;
+}
+
+.top {
+  background-color: red;
+  width: 400px;
+  height: 200px;
+  font-size: 26px;
+}
+
+.left {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  /* display: inline-block; 살구색 할당 영역 맞추기 */
+  font-size: 26px;
+  /* vertical-align: top; 수직 정렬, 인라인 방식의 문제를 해결하는 코드 */
+  /* float: left; */
+}
+
+.right {
+  background-color: green;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  font-size: 26px;
+  /* float: left; */
+}
+
+.bottom {
+  background-color: purple;
+  width: 400px;
+  height: 200px;
+  font-size: 26px;
+  /* clear: both; float의 수평만 정렬하는 문제를 해결하는 코드 */
+}
+
+p {
+  margin: 0px;
+}
+
+
+
+.flexBox {
+  display: flex;
+}
+
+.flexBox2 {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.flexBox2 div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 1px solid black;
+}
+
+/* CSS 속성 - 폰트*/
+@font-face {
+  font-family: Barking at Stars;
+  src: url(./font/barking_at_stars/Barking\ at\ Stars.otf);
+}
+
+.font {
+  /* font: italic small-caps bold 12px/30px Barking at Stars; */
+  font-style: italic;
+  font-weight: border;
+  /* font-variant: small-caps; */
+  font-size: 1em;
+  line-height: 1.2em;
+  font-family: Barking at Stars, Malgun Gothic;
+}

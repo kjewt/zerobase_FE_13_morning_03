@@ -1,0 +1,50 @@
+.container_grid {
+  width: 400px;
+  height: 600px;
+  border: 1px solid black;
+  font-size: 0px; /* 글 공백으로 인한 줄바꿈 현상*/
+  color: white;
+  font-weight: bold;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+  "top right"
+  "left right"
+  "bottom right";
+
+  grid-gap: 10px;
+}
+
+.top_grid {
+  background-color: red;
+  grid-area: top;
+
+  width: auto;
+  height: auto;
+}
+
+.left_grid {
+  background-color: blue;
+  grid-area: left;
+
+  width: auto;
+  height: auto;
+}
+
+.right_grid {
+  background-color: green;
+  grid-area: right;
+
+  width: auto;
+  height: auto;
+}
+
+.bottom_grid {
+  background-color: purple;
+  grid-area: bottom;
+
+  width: auto;
+  height: auto;
+}

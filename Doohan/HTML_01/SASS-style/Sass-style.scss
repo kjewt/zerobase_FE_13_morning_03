@@ -1,0 +1,188 @@
+$primary-color: #00498C;
+$color: lightgreen;
+@use "sass:math";
+@use "use-test" as ut;
+
+body {
+  // 01 nesting 구조
+  .box01 {
+    // width: 100px;
+    // height: 100px;
+    border: 1px solid black;
+    p {
+      color: red;
+    }
+  }
+
+  // 02 기초 문법
+  .box02 {
+    background-color: black;
+    color:gray;
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  // 03 변수
+  .box03 {
+    width: 100%;
+    background-color: black;
+    color:$primary-color;
+  }
+
+  // 04 색관련 내장 함수
+  .box04 {
+    div {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      background-color: $color;
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+      &:nth-of-type(1) 
+      
+      &:nth-of-type(2) {
+        background-color: darken($color, 30%);
+      }
+      &:nth-of-type(3) {
+        background-color: lighten($color, 20%);
+      }
+      &:nth-of-type(4) {
+        background-color: saturate($color, 70%);
+      }
+      &:nth-of-type(5) {
+        background-color: desaturate($color, 70%);
+      }
+      &:nth-of-type(6) {
+        background-color: adjust-hue($color, 70deg);
+      }
+      &:nth-of-type(7) { // lighten이랑 거의 비슷함 (투명도 차이 추정)
+        background-color: rgba($color, 0.2); 
+      }
+    }
+  }
+
+  // 05 확장(extend) / CSS 템플릿
+  %btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+  }
+
+  .btn-1 {
+    @extend %btn;
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+  }
+
+  .btn-2 {
+    @extend %btn;
+    border: 1px solid blue;
+    color: blue;
+    font-weight: bold;
+  }
+
+  // 06 mixin / CSS 맞춤 템플릿
+  // 버튼은 btn, 테두리는 $border-color, 글자색은 $font-color 로 사용함
+  @mixin 버튼($테두리: black, $글자색: black) {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    font-weight: bold;
+
+    border: 1px solid $테두리;
+    color: $글자색;
+  }
+
+  .btn-1 {
+    @include 버튼(red, red);
+  }
+
+  .btn-2 {
+    @include 버튼(blue, blue);
+  }
+
+  .btn-3 {
+    @include 버튼();
+  }
+
+  .btn-4 {
+    @include 버튼($글자색: green);
+  }
+
+  // 07 SASS Operator (연산자)
+  .box {
+    // width: calc(10em - 100px);
+    // width: 100px + 100px;
+    // width: (200px / 2);
+    width: math.div(300px, 2);
+    height: 100px;
+    border: 1px solid red;
+  }
+
+  // 08 use / 다른 파일 가져오기
+  // @use "use-test"; (제일 위에 선언)
+  .box-use {
+    color: ut.$use-value;
+  }
+
+}
+
+// 09 SASS 다른 기능들
+
+// 반복문
+@for $i from 1 through 10 {
+  .box-for:nth-last-of-type(#{$i}) {
+    width: 100px;
+  }
+}
+
+// 배열
+$list: orange, blue, red, yellow;
+
+@each $color-each in $list {
+  .box-each {
+    background-color: $color-each;
+  }
+}
+
+// 오브젝트
+$object : (
+  1: orange,
+  2: blue, 
+  3: yellow
+);
+
+@each $key, $color-object in $object {
+  .box-object-#{$key} {
+    background-color: $color-object;
+  }
+}
+
+// 조건문(가정문)
+// $statement: blue;
+$statement: gray;
+
+
+#p-if {
+  @if $statement == blue {
+    color: blue;
+  }
+  @else {
+    color: red;
+  }
+}
+
+// /**/ 주석 안에 #{$}를 사용해서 에러나는 문제 해결법
+// 반복문
+// @for $i from 1 through 10 {
+//   .box-for:nth-last-of-type(#{$}) {
+//     width: 100px;
+//   }
+// }

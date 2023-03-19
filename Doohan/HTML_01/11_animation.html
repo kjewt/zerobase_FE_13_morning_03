@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="stylesheet" href="./11_animationStyle.css">
+  <link rel="stylesheet" href="../assets/css/11_animationStyle.css">
+</head>
+<body>
+  <!-- 01 transition -->
+  <div class="box">
+    <div class="box-overlay">
+      <p>제로 코딩</p>
+      <p>010-1234-5678</p>
+    </div>
+  </div>
+
+  <!-- 02 JavaScript -->
+  <div id="box-2"></div>
+  <div id="box-3" 
+    style="width: 100px; height: 100px; background-color: red;"></div>
+
+  <script>
+    // 1. JS는 태초부터 웹 UI를 제어하기 위한 언어였다.
+    /*
+      1. JS로 제어하고 싶은 HTML 태그 선택
+        document.getElementById("아이디")
+      2. 어떤 이벤트가 발생했을 때 제어할 것인지 선택
+        구글링: JS event list
+      3. CSS 변경
+
+      . : ~의 (documnet.A = 문서의 A)
+
+      * 구현할 태그 뒤에 Script 태그 넣어서 구현 (순서 반대면 오류 발생)
+    */
+    var 박스 = document.getElementById("box-2");
+    var 두번째박스 = document.getElementById("box-3");
+
+    // 박스.addEventListener("click", () => {
+    //   박스.style.width = "200px";
+    // });
+
+    // 박스.addEventListener("mouseover", () => {
+    //   박스.style.width = "200px";
+    // });
+
+    // 박스.addEventListener("mouseout", () => {
+    //   박스.style.width = "100px";
+    // });
+
+    박스.addEventListener("mouseover", () => {
+      두번째박스.style.width = "100%";
+    });
+
+    박스.addEventListener("mouseout", () => {
+      두번째박스.style.width = "100px";
+    });
+  </script>
+
+
+
+
+
+  <!-- 03 JavaScript - Modal-->
+  <h1 id = "heading">제목이다</h1>
+  <p>내용이다</p>
+  <button onclick="
+  heading.style.color = 'blue';
+  ">수정</button> <br />
+  <button onclick="삭제하기()">삭제</button> <br />
+  <button onclick="모달창열고닫기('block')">진짜삭제</button> 
+
+  <!-- modal -->
+  <div class="modalDiv">
+    <div class="bg" onclick="모달창열고닫기('none')"></div>
+    <div class="modal">
+      <p>정말 삭제하시겠습니까?</p>
+      <button onclick="모달창열고닫기('none')">취소</button>
+      <button onclick="">삭제</button>
+    </div>
+  </div>
+  
+  <script>
+    function 삭제하기() {
+      var heading = document.getElementById('heading');
+      heading.style.color = 'red';
+    }
+    
+    /*
+      UI 만들기 방법
+      1. HTML/CSS UI 만들기
+      2. CSS로 숨기기
+      3. JS로 다시 나타나게 하기
+
+      dry : don't repeat your code (반복되는 부분 최소화)
+    */
+
+    const 모달창열기 = () => {
+      // var 모달 = document.getElementsByClassName(".modalDiv")[0]; // 배열로 사용
+      // getElementById(), getElementsByClassName() 들 보다 자유로운 문법 
+      var 모달 = document.querySelector(".modalDiv");
+      모달.style.display = "block";
+    };
+
+    const 모달창닫기 = () => {
+      var 모달 = document.querySelector(".modalDiv");
+      모달.style.display = "none";
+    };
+
+    const 모달창열고닫기 = (인자) => {
+      var 모달 = document.querySelector(".modalDiv");
+      모달.style.display = 인자;
+    };
+  </script>
+
+
+
+
+
+  <!-- 04 transform - -->
+  <!-- 
+    웹 UI를 바꾸는 방법
+    
+    1. dom-tree
+    2. layout : width, height
+    3. paint: color
+    4. composite : transform
+  -->
+  <div class="box-4"></div>
+
+
+
+
+
+  <!-- 05 transform - 복잡한 애니메이션 (wiggle) -->
+  <h1 class="wiggle">반갑습니다.</h1>
+
+
+
+
+
+  <!-- 06 자바스크립트 - 마우스 추적-->
+  <h1>x : <span id="x"></span>, y : <span id="y"></span></h1>
+  <div id="cursor"></div>
+
+  <script>
+    window.addEventListener("mousemove", 마우스추적);
+    var x = document.querySelector("#x");
+    var y = document.querySelector("#y");
+    var cursor = document.querySelector("#cursor");
+
+    function 마우스추적 (event) {
+      x.innerHTML = event.clientX;
+      y.innerHTML = event.clientY;
+
+      // i. 마우스 추적 이벤트 (1)
+      // cursor.style.top = (event.clientY - 25) + "px";
+      // cursor.style.left = (event.clientX - 25) + "px";
+
+      // ii. 마우스 추적 이벤트 (2)
+      // 구글링: css tricks mousemove
+      let value = (event.clientX - 25) + "px," + (event.clientY - 25) + "px";
+      cursor.style.transform = "translate(" + value + ")";
+    }
+  </script>
+
+
+
+
+  <!-- 07 자바스크립트 - 마우스 추적 2.0-->
+  <div id="targetBox">
+    <div id="blind"></div>
+    <h1>Hello, 자바스크립트</h1>
+  </div>
+
+  <script>
+    var targetBox = document.querySelector("#targetBox");
+    var blind = document.querySelector("#blind");
+
+    targetBox.addEventListener("mousemove", (e) => {
+      blind.style.transform = "translateX(" + e.clientX + "px)"
+    });
+  </script>
+
+
+
+
+
+  <!-- 08 자바스크립트 - 스크롤 위치 추적 -->
+  <!-- 
+    구글링: css trick scoll , css gradient example
+
+    문서의 전체 높이: document.documentElement.scrollHeight
+    브라우저가 보여주고 있는 높이: window.innerHeight
+    스크롤의 위치: document.documentElement.scrollTop
+
+    스크롤의 위치 / (문서의 전체 높이 - 브라우저가 보여주고 있는 높이) * 100%
+  -->
+  <div class="scroll-outer">
+    <div class="scroll-inner"></div>
+  </div>
+
+  <script>
+    var scrollY = 0;
+    var target = document.querySelector(".scroll-inner");
+    
+    window.addEventListener("scroll", () => {
+      var documentHeight = document.documentElement.scrollHeight; // 실행했을 때, 찾도록 메서드 안에서 선언
+      var browserHeight = window.innerHeight;
+      scrollY = document.documentElement.scrollTop;
+      var percent = scrollY / (documentHeight - browserHeight) * 100 ;
+      target.style.height = Math.round(percent) + "%";
+      console.log(Math.round(percent));
+    });
+  </script>
+</body>
+</html>
+
+<!--
+  SASS 미적용 문제
+  - 원인: 장인핵심프로젝트 이후 생성 파일 경로 바뀜
+  - 해결: 바뀐 경로를 추가
+
+-->

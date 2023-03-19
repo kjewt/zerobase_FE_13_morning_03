@@ -1,0 +1,21 @@
+/*
+    # 아이디 {}
+    . 클래스 {}
+    태그이름 {}
+*/
+
+.parent {
+    width: 200px;
+    height: 200px;
+    border: 1px dashed red;
+}
+
+.child {
+    width: 50%; /* 부모 태그 기준으로 자식 태그에서 퍼센트 사용*/
+    height: 100px;
+    background-color: blue;
+}
+
+/* 
+    크기 단위: px, em, rem / vw, vh, fr
+*/

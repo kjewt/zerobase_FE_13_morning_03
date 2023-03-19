@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- 01 form-->
+    <!--
+      action: 데이터를 제출했을 때, 어디로 요청을 보내지 정보
+      method: 요청보냈을 떄, 어떤 방식으로 폼 태그에 정보를 전달하는 지
+       (get, post, put, delete)
+       get: 손 / 입력한 정보 url / ?분기로 정보 / 1개 이상 정보는 & / name=사용자가입력한 값
+       post: 택배 / 서버에 요청 보냄 
+    -->
+    <form action="./00_result.html" method="get">
+      <div>ID : <input name="id" type="text" /></div>
+      <div>PW : <input name="password" type="password" /></div>
+      <input type="submit" value="로그인" />
+    </form>
+
+    <br /><br /><br /><br /><br />
+    <!-- 02 input-->
+    <!--
+      type: 값에 따라 다양한 데이터형태로 데이터 전달
+      name: 폼 태그를 통해 전달되는 값
+      value: 사용자가 입력했을 때, 값이 정해지는 곳 / 미리 할당도 가능 / 지우는게 일반적
+
+      email: 일반 text와 유사하나, 이메일 형태 유효성 체크
+      submit: 버튼 형태 /
+      button: 속성과 상관없이 폼으로 제출되는 효과
+    -->
+    <form action="./00_result.html" method="get">
+      <input type="email" name="" value="" placeholder="email를 입력하세요." />
+      <input type="password" name="" value="" placeholder="pw를 입력하세요." />
+      <br />
+      <input type="submit" value="로그인" />
+      <button type="submit">버튼 태그 / 타입 submit</button>
+      <button>버튼 태그만</button>
+      <!--제출 안 함-->
+      <input type="button" value="제출 안 함" />
+    </form>
+
+    <br /><br /><br /><br /><br />
+    <!-- 03 select, dropdown-->
+    <!--
+      multiple: 다중 선택 (UI가 일반적이지 않음)
+    -->
+    <form action="./00_result.html" method="get">
+      <select name="color" multiple>
+        <option value="red">빨간색</option>
+        <option value="blue">파란색</option>
+        <option value="green">초록색</option>
+      </select>
+      <input type="submit" value="제출" />
+    </form>
+
+    <br /><br /><br /><br /><br />
+    <!-- 04 다중 선택 checkbox,단일 선택 radio -->
+    <form action="./00_result.html" method="get">
+      <div>
+        모자:
+        <input type="checkbox" name="kind" value="hat" />
+        상의:
+        <input type="checkbox" name="kind" value="top" />
+        하의:
+        <input type="checkbox" name="kind" value="bottom" />
+        양말:
+        <input type="checkbox" name="kind" value="socks" />
+      </div>
+      <div>
+        남자:
+        <input type="radio" name="gender" value="man" />
+        여자:
+        <input type="radio" name="gender" value="woman" />
+      </div>
+      <input type="submit" value="제출" />
+    </form>
+
+    <br /><br /><br /><br /><br />
+    <!-- 05 label-->
+    <!--
+      label
+      : 태그를 설명해주는 기능 / 텍스트만 눌러도 반응 / 
+      input 태그일 때 적극 사용 권장
+
+      적용 방법
+       1. 라벨 태그 안으로 감싸서 표현
+       2. 라벨 태그의 for 속성을 통해 id값을 일치시키기
+    -->
+    <form action="./00_result.html" method="get">
+      <label> 모자:<input type="checkbox" name="kind" value="hat" /> </label>
+      <label for="top"></label>
+      상의:<input id="top" type="checkbox" name="kind" value="top" />
+      <input type="submit" value="제출" />
+    </form>
+
+    <!-- 06 textarea -->
+    <form action="./00_result.html" method="get">
+      <div>
+        <label>
+          제목 : <br />
+          <input type="text" name="" id="" />
+        </label>
+        <label>
+          내용 : <br />
+          <textarea
+            name=""
+            id=""
+            cols=""
+            rows=""
+            style="width: 300px; height: 200px; resize: none"
+            placeholder="내용을 입력해주세요"
+          ></textarea>
+          <br />
+          <input type="submit" value="등록" />
+        </label>
+      </div>
+    </form>
+
+    <!-- 08 input - hidden 속성-->
+    <form action="./00_result.html" method="get">
+      <input type="text" name="text" />
+      <input type="hidden" name="where" value="top_search" />
+      <input type="submit" name="제출" />
+    </form>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi numquam,
+      veritatis dignissimos libero, error ullam iure laborum quibusdam quasi
+      beatae voluptatum eos officia officiis temporibus minus explicabo
+      distinctio eaque cupiditate.
+    </p>
+
+    <form action="./00_result.html" method="get">
+      <input type="text" name="text" />
+      <input type="hidden" name="where" value="bottom_search" />
+      <input type="submit" name="제출" />
+    </form>
+
+    <!-- 09 이모티콘 같은 문자 svg-->
+    <!--
+      vector data vs. BitMap data
+
+      사용 방법
+      i. svg 태그 그대로 복붙
+     ii. svg 태그를 별도 파일로 만들고, image태그에서 출력
+    iii. div { background-image: url(./ ~ .svg)};
+
+      직접 만드는 일은 손에 꼽을 정도
+      => fontawesome, bootstrap
+
+      fontawesome: 
+        페이지 가서 다운로드하고 사용
+         => 찾는데 오래 걸리지만, 앞선 문제점을 방지함
+        cdn: 카피 링크 => head link 로 가져와서 사용
+         => 단점: 이 서비스가 바뀌거나 사라지면, 우리도 사용 못 함
+                  불필요한 아이콘도 같이 가져오기 때문에 시간이 걸림
+
+    -->
+    <input type="button" value="버튼" />
+    <button>
+      <!-- p태그들을 여러개 넣거나, svg로 아이콘을 넣거나 가능-->
+      <svg></svg>
+    </button>
+
+    <button
+      style="
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 15px;
+      "
+    >
+      <!-- i 태그: icon태그 와 동일, 줄인말일 수도 있음 -->
+      <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <button
+      style="
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 15px;
+      "
+    >
+      <!-- class 방식은 용량은 많이 차지하나 가독성이 좋고,
+      svg은 용량은 비교적 효율적이지만, 가독성이 좋지 않아서
+      일반적으로 class방식을 사용한다.-->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-youtube"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
+        />
+      </svg>
+    </button>
+  </body>
+</html>
