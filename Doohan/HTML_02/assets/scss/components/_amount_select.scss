@@ -18,7 +18,8 @@
             background-color: #00d780;
             color: #fff;
         }
-        &:disabled {
+        &.disabled,     // 클래스
+        &:disabled {    // 상태값
             color: $booking-color-border102;
         }
         &::before {

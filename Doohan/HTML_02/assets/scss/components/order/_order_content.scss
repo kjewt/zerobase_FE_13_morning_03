@@ -1,0 +1,189 @@
+.order-content {
+    margin: -40px 10px 0;
+    
+    .common-inner {
+        position: relative;
+        background-color: #fff;
+        &::before,
+        &::after { // 기영이 머리처럼 생긴 영수증 모양
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 5px; // 2배수가 되지 않게하기 위해, 본래 크기에 2분의 1로 처리
+            background: url('../images/bg-pattern.png') repeat-x; // 이미지로 처리
+            background-size: auto 5px;
+        }
+        &::before {
+            top: -5px;
+        }
+        &::after { // 영수증 모양 밑부분 디테일
+            bottom: -5px;
+            transform: rotate(180deg);
+            
+        }
+    }
+
+    .order-content-top {
+        position: relative;
+        padding: 26px $m-padding 24px;
+        &::after { // 프로필 같은 아이콘
+            content: '';
+            position: absolute;
+            top: 26px;
+            right: $m-padding;
+            width: 83px;
+            height: 83px;
+            border-radius: 100%;
+            background: url('https://via.placeholder.com/83') no-repeat;
+        }
+        .title { // 포장할게요
+            line-height: 1.2;
+            font-size: 20px;
+            font-weight: 700;
+            color: $green;
+        }
+        .desc { // 가지고 가실 수 있게 ...
+            margin-top: 8px;
+            line-height: 1.2;
+            font-size: 14px;
+            font-weight: 500;
+            color: $booking-color-text6;
+        }
+        .count { // 담은 메뉴: 3개
+            margin-top: 8px;
+            line-height: 20px;
+            font-size: 14px;
+            color: $booking-color-text4;
+            letter-spacing: -0.4px;
+        }
+    }
+
+    .order-content-body {
+        border-top: 1px dashed $booking-color-border147; // 영수증 모양 안에 대쉬 디테일
+
+        .no-order {
+            padding: 70px 0;
+            text-align: center;
+            .txt {
+                margin-top: 6px;
+                font-size: 14px;
+                color: #8f8f8f;
+            }
+        }
+
+        .menu-list {
+            padding: 0 $m-padding; // 양쪽에 $m-padding만큼 여백
+        }
+
+        .menu-item {
+            position: relative;
+            align-items: flex-start; // 상단 내용 기준으로 정리
+            padding: 22px $m-padding;
+
+            .menu-name-group {
+                padding-right: 40px;
+            }
+
+            .menu-name { // 메뉴 이름
+                line-height: 23px;
+                font-size: 18px;
+            }
+
+            .menu-desc { // 메뉴 설명
+                margin-top: 2px;
+            }
+
+            .btn-option { // '옵션변경' 버튼
+                display: inline-block;
+                margin-top: 8px;
+                padding: 0 6px;
+                line-height: 20px;
+                border-radius: 3px;
+                border: 1px solid $booking-color-border109;
+                background-color: $booking-color-bg21;
+                font-size: 12px;
+                color: $booking-color-text4;
+            }
+
+            .amount-and-price { // 수량 버튼 + 가격 표시
+                display: flex;
+                justify-content: space-between; // 양쪽으로
+                align-items: center;
+                margin-top: 18px;
+
+                .menu-price {
+                    margin-top: 0;
+                    font-size: 18px;
+                }
+            }
+
+            .btn-delete { // 삭제 버튼
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 22px 18px; // 옆에 '메뉴 이름' 여백에 맞춰서 + 메뉴 이름이 길 때, 겹치지 않게
+                .ico-delete {
+                    width: 14px;
+                    opacity: 0.3;
+                }
+            }
+        }
+
+        .order-total { // 총 주문금액, 총 금액
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 $m-padding;
+            padding: 24px 0;
+            border-top: 2px solid $booking-color-border112;
+            font-size: 20px;
+            font-weight: 700;
+
+            .total-price {
+                font-size: 19px;
+                color: $point-color;
+            }
+        }
+    }
+
+    .btn-menu-add { // 메뉴 추가 버튼
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 22px auto 30px;
+        width: 150px;
+        line-height: 48px;
+        border-radius: 24px;
+        border: 1px solid $booking-color-border101;
+        background-color: #fff;
+        color: $booking-color-text2;
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.04);
+
+        .ico-add {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 6px;
+            width: 13px;
+            height: 13px;
+            &::before { // 영역 안에 플러스 모양 중 가로
+                content: '';
+                display: inline-block;
+                width: 13px;
+                height: 1px;
+                background-color: $green;
+            }
+            &::after { // 영역 안에 플러스 모양 중 세로
+                content: '';
+                position: absolute;
+                display: inline-block;
+                width: 1px;
+                height: 13px;
+                background-color: $green;
+            }
+        }
+    }
+}
