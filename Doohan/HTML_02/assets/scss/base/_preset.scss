@@ -18,3 +18,18 @@
     display: none;
   }
 }
+
+body.scroll-off {
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+// function css = 하나의 클래스가 하나의 기능을 담고 있음
+.fw700 { // 폰트굵기 700으로 바꾸는 클래스
+  font-weight: 700;
+}
+
+.color-point { // 해당 클래스 사용하면 색 변수 사용 (=> 현재 '필수' 항목에 사용)
+  color: $point-color;
+}
