@@ -1,0 +1,52 @@
+header {
+  width: calc(100% - calc(50px * 2));
+  height: $header-height;
+  background-color: #fff;
+
+  padding: 0 50px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5000;
+
+  .fixed-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-logo {
+      a {
+        display: flex;
+        align-items: center;
+        img {
+          height: 20px;
+        }
+      }
+    }
+
+    .header-btn {
+      a {
+        display: flex;
+        align-items: center;
+
+        button {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 100px;
+          background: linear-gradient(135deg,#0ed5bc,#14e0a9);
+
+          font-size: 15px;
+          font-weight: 700;
+          color: $color-text-base;
+
+          @include btn-cursor;
+        }
+      }
+    }
+  }
+
+}

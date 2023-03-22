@@ -1,0 +1,249 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.banner {
+  width: 100%;
+  height: 299px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: hsla(0, 0%, 7%, 0.93);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5000;
+  color: white;
+}
+footer .fixed-footer-alert {
+  width: calc(100% - 100px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 50px;
+}
+footer .fixed-footer-alert .desc-box p {
+  font-size: 13px;
+  color: #e4e4e4;
+  user-select: none;
+}
+footer .fixed-footer-alert .agreement-box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+footer .fixed-footer-alert .agreement-box > div {
+  display: flex;
+  align-items: center;
+  line-height: 50px;
+}
+footer .fixed-footer-alert .agreement-box > div a {
+  color: #c8c8c8;
+  font-size: 12px;
+  margin-right: 30px;
+  text-decoration: underline;
+  user-select: none;
+  cursor: pointer;
+}
+footer .fixed-footer-alert .agreement-box .btn-box .btn-select {
+  height: 32px;
+  padding: 0 16px;
+  background-color: #3a3a3a;
+  border: none;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: -0.3px;
+  user-select: none;
+  cursor: pointer;
+  margin-right: 6px;
+  color: #e4e4e4;
+}
+footer .fixed-footer-alert .agreement-box .btn-box .btn-all {
+  height: 32px;
+  padding: 0 16px;
+  background-color: #3a3a3a;
+  border: none;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: -0.3px;
+  user-select: none;
+  cursor: pointer;
+  color: #08ccca;
+}
+
+header {
+  width: calc(100% - 100px);
+  height: 80px;
+  background-color: #fff;
+  padding: 0 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5000;
+}
+header .fixed-header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .fixed-header .header-logo a {
+  display: flex;
+  align-items: center;
+}
+header .fixed-header .header-logo a img {
+  height: 20px;
+}
+header .fixed-header .header-btn a {
+  display: flex;
+  align-items: center;
+}
+header .fixed-header .header-btn a button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #0ed5bc, #14e0a9);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  user-select: none;
+  cursor: pointer;
+}
+
+.artist-content {
+  width: 874px;
+  margin: 70px auto;
+}
+.artist-content .title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #000;
+  user-select: none;
+}
+.artist-content .artist-box {
+  margin-top: 26px;
+  width: 100%;
+}
+.artist-content .artist-box .artist-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px 14px;
+  user-select: none;
+}
+.artist-content .artist-box .artist-list .artist-item {
+  height: 280px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.artist-content .artist-box .artist-list .artist-item:hover a .artist-img {
+  border-radius: 15px 15px 0px 0px;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+.artist-content .artist-box .artist-list .artist-item a .artist-img {
+  display: block;
+}
+.artist-content .artist-box .artist-list .artist-item .artist-logo {
+  position: relative;
+  z-index: 10;
+  top: -25px;
+  height: 50px;
+}
+.artist-content .artist-box .artist-list .artist-item .artist-logo img {
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+.artist-content .artist-box .artist-list .artist-item .artist-name {
+  position: relative;
+  top: -50px;
+  height: 23px;
+  padding: 26px 0px 23px 0px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.artist-content .artist-box .artist-list .artist-item .artist-name p {
+  font-size: 19px;
+  font-weight: 900;
+  color: #000;
+  line-height: 19px;
+  vertical-align: middle;
+  padding-top: 5px;
+}
+
+.container {
+  margin-top: 80px;
+  padding-bottom: 100px;
+  background-color: #f7f7fa;
+}/*# sourceMappingURL=style.css.map */
