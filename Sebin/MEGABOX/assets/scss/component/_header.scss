@@ -1,0 +1,126 @@
+header {
+  background-color: rgb(10, 11, 30);
+  border-bottom: 1px solid rgba(255,255,255,.2);
+  color: #fff;
+
+  & a {
+    color: #fff;
+  }
+
+  & nav {
+    display: grid;
+    grid-template-columns: 1fr 140px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "top-left logo-img top-right"
+    "bottom-left logo-img bottom-right";
+    grid-row-gap: 18px;
+
+    padding: 20px;
+
+    & .top-left {
+      grid-area: top-left;
+      display: flex;
+      align-items: center;
+
+      & li {
+        margin-right: 20px;
+        font-size: 14px;
+        
+        & a {
+          color: $color-text-top-nav;
+
+          &:hover {
+            border-bottom: 1px solid $color-text-top-nav;
+          }
+        }
+      }
+    }
+
+    & .logo-img {
+      grid-area: logo-img;
+
+      user-select: none;
+    }
+
+    & .top-right {
+      grid-area: top-right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      & li {
+        font-size: 14px;
+
+        &:not(:last-of-type) {
+         margin-right: 20px; 
+        }
+        
+        & a {
+          color: $color-text-top-nav;
+
+          &:hover {
+            border-bottom: 1px solid $color-text-top-nav;
+          }
+        }
+      }
+    }
+
+    & .bottom-left {
+      grid-area: bottom-left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+
+      font-size: 18px;
+      font-weight: 700;
+      color: $color-text-nav;
+
+      user-select: none;
+
+      & .left-ico a {
+        margin-right: 10px;
+      }
+
+      & .left-text ul li {
+        margin-left: 50px;
+      }
+
+      & .left-text ul {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+    }
+
+    & .bottom-right {
+      grid-area: bottom-right;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+      margin-left: 20%;
+
+      font-size: 18px;
+      font-weight: 700;
+      color: $color-text-nav;
+
+      user-select: none;
+
+      & .right-ico a {
+        margin-left: 10px;
+      }
+
+      & .right-text ul li {
+        margin-right: 50px;
+      }
+
+      & .right-text ul {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+    }
+  }
+}
