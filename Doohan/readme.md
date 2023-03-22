@@ -1,4 +1,4 @@
-HTML/CSS 실습
-JS 실습
-코딩테스트
-React.js
+1. HTML/CSS 실습
+2. JS 실습
+3. 코딩테스트
+4. React.js
