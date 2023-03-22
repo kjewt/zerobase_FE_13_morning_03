@@ -1,0 +1,264 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.common-inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+article {
+  margin-top: 70px;
+  color: white;
+}
+article .article-title {
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  user-select: none;
+}
+article .article-title .main-title {
+  position: relative;
+  line-height: 16px;
+  font-weight: 700;
+}
+article .article-title .main-title::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 2px;
+  background-color: #888;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+article .article-title .more {
+  position: absolute;
+  right: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #888;
+}
+article .article-title .more:hover {
+  border-bottom: 2px solid #888;
+}
+article .article-list {
+  margin-top: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+article .article-list .article-item {
+  min-width: 245px;
+  width: 245px;
+}
+article .article-list .article-item .item-img {
+  display: block;
+  margin-bottom: 8px;
+  position: relative;
+}
+article .article-list .article-item .item-img img {
+  width: 245px;
+  height: 352px;
+  border-radius: 4px;
+}
+article .article-list .article-item .item-img:hover::after {
+  content: "";
+  position: absolute;
+  width: 245px;
+  height: 352px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  top: 0;
+  left: 0;
+}
+article .article-list .article-item .item-btn {
+  width: 100%;
+  height: 36px;
+  display: flex;
+}
+article .article-list .article-item .item-btn .like {
+  width: 30%;
+  height: 100%;
+  min-height: 36px;
+  margin-right: 4px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+}
+article .article-list .article-item .item-btn .reservation {
+  height: 100%;
+  width: calc(70% - 4px);
+  min-height: 36px;
+  color: #fff;
+  background-color: #037b94;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(15, 22, 43);
+}
+
+header {
+  background-color: rgb(10, 11, 30);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+header a {
+  color: #fff;
+}
+header nav {
+  display: grid;
+  grid-template-columns: 1fr 140px 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "top-left logo-img top-right" "bottom-left logo-img bottom-right";
+  grid-row-gap: 18px;
+  padding: 20px;
+}
+header nav .top-left {
+  grid-area: top-left;
+  display: flex;
+  align-items: center;
+}
+header nav .top-left li {
+  margin-right: 20px;
+  font-size: 14px;
+}
+header nav .top-left li a {
+  color: #888;
+}
+header nav .top-left li a:hover {
+  border-bottom: 1px solid #888;
+}
+header nav .logo-img {
+  grid-area: logo-img;
+  user-select: none;
+}
+header nav .top-right {
+  grid-area: top-right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header nav .top-right li {
+  font-size: 14px;
+}
+header nav .top-right li:not(:last-of-type) {
+  margin-right: 20px;
+}
+header nav .top-right li a {
+  color: #888;
+}
+header nav .top-right li a:hover {
+  border-bottom: 1px solid #888;
+}
+header nav .bottom-left {
+  grid-area: bottom-left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  user-select: none;
+}
+header nav .bottom-left .left-ico a {
+  margin-right: 10px;
+}
+header nav .bottom-left .left-text ul li {
+  margin-left: 50px;
+}
+header nav .bottom-left .left-text ul {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+header nav .bottom-right {
+  grid-area: bottom-right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 20%;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  user-select: none;
+}
+header nav .bottom-right .right-ico a {
+  margin-left: 10px;
+}
+header nav .bottom-right .right-text ul li {
+  margin-right: 50px;
+}
+header nav .bottom-right .right-text ul {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
