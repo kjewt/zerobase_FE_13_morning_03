@@ -1,0 +1,83 @@
+@charset "UTF-8";
+body {
+  margin: 20px;
+}
+body .box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  background-image: url("img/한글프로필.png");
+  background-size: cover;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+  position: relative;
+}
+body .box:hover .box-overlay {
+  left: 0px;
+  opacity: 1;
+}
+body .box-overlay {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: -100px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background-color: lightblue;
+  opacity: 0;
+}
+body .box-overlay p {
+  margin: 0px;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+}
+body #box-2 {
+  width: 100px;
+  height: 100px;
+  background-image: url("img/한글프로필.png");
+  background-position: center;
+  background-size: cover;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: width 1s ease-in;
+}
+body #box-3 {
+  transition: width 0.5s ease-in;
+}
+
+body, p {
+  margin: 0px;
+}
+body .modalDiv, p .modalDiv {
+  display: none;
+}
+body .modalDiv .bg, p .modalDiv .bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+body .modalDiv .modal, p .modalDiv .modal {
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  width: 50%;
+  left: 25%;
+  top: 25%;
+  padding: 20px;
+  border-radius: 16px;
+}/*# sourceMappingURL=11_animationStyle.css.map */

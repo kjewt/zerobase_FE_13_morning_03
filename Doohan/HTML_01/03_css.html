@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h {
+        font-size: 36px;
+        color: red;
+        font-weight: bold;
+      }
+
+      .title {
+        font-size: 40px;
+        color: green;
+        font-weight: bold;
+      }
+
+      #heading {
+        font-size: 40px;
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <p style="font-size: 48px; font-weight: light; color: cyan">안녕하세요</p>
+    <h1>스타일 태그 적용</h1>
+    <h1 class="title">스타일 태그 적용</h1>
+    <h1 id="heading">스타일 태그 적용</h1>
+
+    <!-- Link 태그로 CSS 파일 가져오기-->
+    <p id="title2">안녕하세요</p>
+    <p class="author">나다</p>
+  </body>
+</html>
+<!--
+    HTML : 웹 페이지의 내용
+    CSS : 웹 페이지의 디자인
+        
+    Inline 방식 : style="디자인 속성 : 디자인값;"
+    
+    Style 태그 적용 : <style> 디자인 속성 {디자인값;} </style>
+
+    클래스는 .
+    아이디는 #
+    /// 종류: 인라인, 전역 태그, 클래스, 아이디
+
+    클래스과 아이디와 동시 사용 시, "반드시 아이디가 우선"
+    '전역 태그'와 클래스 동시 사용 시, "클래스가 이김"
+    /// 적용 우선 순위: 인라인 속성 > #(아이디) > .(클래스) > 전역 태그
+
+    아이디의 값은 문서의 고유하게 단 한 번만 선언 하는 것이 관례
+    클래스는 
+        여러 번 재사용해도 상관없다 
+        + 속성 선언도 띄어쓰기로 구분하여 여러개 클래스 사용 가능
+
+
+        VS 단축어 팁: 태그. / 태그# / 태그*몇개 / ul>li*몇개
+-->

@@ -1,0 +1,188 @@
+.order-content-extra {
+    .orderer-info-area,
+    .place-map-area,
+    .agreement-area {
+        padding: 0 $m-padding 30px;
+        background-color: #fff;
+    }
+
+    .title { // 주문자 정보
+        padding-top: 30px;
+        font-size: 18px;
+        font-weight: 700;
+        color: $booking-color-text2;
+    }
+
+    .orderer-info-area {
+        .info-item { // 각각 아이템(요청사항, 연락처 사이) 간격
+            margin-top: 20px;
+        }
+
+        .info-title { // 제목 (요청사항, 연락처)
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            color: $booking-color-text2;
+            &::before { // 각 제목 앞에 점 찍기
+                content: '';
+                margin-right: 8px;
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background-color: #d5dadd;
+            }
+        }
+
+        .option-group { // 필요해요, 필요없어요
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            height: 45px;
+            .option-item {
+                flex: 1;
+            }
+        }
+
+        .input-radio {
+            position: absolute;
+            &:checked { // 만약 체크되어 있으면
+                & + .input-radio-button { // 그 옆에 라벨 버튼이
+                    border-color: $green;
+                    background-color: $green;
+                    font-weight: 700;
+                    color: #fff
+                }
+            }
+        }
+
+        .input-radio-button { // 일반적으로 보이는 버튼의 색 (필요해요, 필요없어요)
+            display: block;
+            line-height: 45px;
+            border: 1px solid $booking-color-border110;
+            background-color: $booking-color-bg3;
+            font-size: 15px;
+            color: $booking-color-text5;
+            text-align: center;
+            &.need { // '필요해요' 사이드 둥근 사격형 표현
+                border-radius: 5px 0 0 5px;
+            }
+            &.no-need { // '필요없어요' 사이드 둥근 사격형 표현
+                border-radius: 0 5px 5px 0;
+                border-left: 0; // 버튼 사이에 미세한 라인(border) 제거
+            }
+        }
+
+        .input-text { // 입력 부분 스타일링
+            display: block;
+            margin-top: 10px;
+            padding: 0 12px;
+            width: 100%;
+            height: 45px;
+            border: 1px solid $booking-color-border112;
+            background-color: $booking-color-bg2;
+            font-size: 15px;
+            color: $booking-color-text2;
+        }
+    }
+
+    .place-map-area { // 주문 매장 위치 (지도)
+        margin-top: 2px;
+        padding-bottom: 0; // 하단 여백 필요하지 않음
+
+        .map-area {
+            margin-top: 10px;
+            border-radius: 5px;
+            background-color: $booking-color-bg5;
+            overflow: hidden;
+        }
+
+        .place-address-box {
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        .place-name { // 샐러드 제로베...
+            font-size: 15px;
+            font-weight: 600;
+            color: $booking-color-text2;
+        }
+        
+        .place-address { // 서울시 강남구 역삼동 ...
+            margin-top: 4px;
+            color: $booking-color-text4;
+        }
+
+        .place-address-detail { // 역삼역 8번 출구로 ...
+            margin-top: 8px;
+            color: #006f49;
+        }
+        
+        .img-map {
+            display: block;
+            width: 100%;
+            border-top: 1px solid #e9eef0; // 이미지 상단에 살짝 보이는 선
+        }
+    }
+
+    .agreement-area { // 개인정보 수집, 제공
+        .agreement-list {
+            margin-top: 10px;
+            border: 1px solid $booking-color-border112;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .agreement-item {
+            &:not(:first-child) { // 첫 번째 요소가 아닌 경우, 탑에 줄 긋기
+                border-top: 1px solid $booking-color-border2;
+            }
+            &.is-open {
+                .agreement-content {
+                    display: block;
+                }
+                .btn-toggle {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        .agreement-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 12px;
+            height: 44px;
+            color: $booking-color-text2;
+            .txt {
+                font-size: 15px;
+            }
+            .btn-toggle {
+                width: 44px;
+                height: 100%;
+                transform: rotate(180deg); // 닫혀있는 상태
+            }
+        }
+
+        .agreement-content {
+            display: none;
+            padding: 12px;
+            max-height: 194px;
+            border-top: 1px solid $booking-color-border2;
+            background-color: $booking-color-bg3;
+            font-size: 14px;
+            color: $booking-color-text4;
+            overflow-y: auto; // 내용이 넘칠경우, 스크롤 표시
+        }
+
+        .agreement-info-txt { // 하단 정보 (주문 서비스 이용을 위한 ...)
+            margin-top: 14px;
+            padding-left: 8px;
+            border-left: 3px solid $booking-color-bg113;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.6;
+            letter-spacing: -0.45px;
+            color: $booking-color-text4;
+        }
+    }
+}

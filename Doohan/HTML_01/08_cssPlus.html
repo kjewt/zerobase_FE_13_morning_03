@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./media-style.css" />
+
+    <style>
+      p {
+        color: red;
+      }
+
+      .test {
+        color: red;
+      }
+
+      #test {
+        color: red;
+      }
+
+      /* * {
+        color: red;
+      } */
+
+      .high-test .test {
+        color: red;
+      }
+
+      .high-test + .test {
+        color: red;
+      }
+
+      .high-test > .test {
+        color: red;
+      }
+
+      .high-test ~ .test {
+        color: red;
+      }
+
+      a[title="Naver"] {
+        color: red;
+      }
+
+      /*가상 선택자*/
+      a:hover {
+        /*마우스를 올렸을 때*/
+        color: blue;
+      }
+
+      a:link {
+        /*클릭하기 전*/
+        color: blue;
+      }
+
+      a:visited {
+        /*클릭한 이후*/
+        color: green;
+      }
+
+      /* p:not(.bug) {
+        color: aqua;
+      } */
+
+      .bug p:nth-child(3) {
+        color: brown;
+      }
+
+      /* 가상 요소 */
+      div {
+        /* position: relative; */
+
+        /* 06 실습 */
+        width: 100%;
+        min-height: 100px;
+        height: auto;
+        border: 1px solid red;
+        background-color: red;
+      }
+
+      .parent {
+        position: relative;
+      }
+
+      .target {
+        position: absolute; /*부모태그 기준으로 정함*/
+        top: 50px; /*absolute => body 태그 기준으로 할당됨*/
+        /* 부모태그가 parent(static)인 것 같지만, 기준이 없어서 body까지감
+        parent가 기준이 되려면 relative 를 넣어야 한다.*/
+        border: 3px solid blue;
+        background-color: blue;
+        width: 50%;
+        right: 0;
+
+        position: fixed; /*브라우저 기준*/
+      }
+
+      .coding::before {
+        /* content: "코딩 내용 : "; */
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+        top: 0;
+        left: 0;
+      }
+
+      .coding::after {
+        content: "/ 코딩 종료 ";
+      }
+
+      /* 05 position */
+      /* body {
+        border: 1px solid yellowgreen;
+        margin: 0px;
+      } */
+
+      /* 06 position */
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 4px solid red;
+
+        /* 기준(position)이 없으면 적용 안 됨*/
+        top: 100px;
+        left: 100px;
+      }
+
+      /* 07 position 속성과 z-index */
+      body {
+        margin: 0px;
+      }
+
+      .bg {
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        opacity: 0.5;
+        z-index: 1; /*컨텐츠가 겹쳤을 때, 1 이상은 지상보다 올라감*/
+      }
+
+      .modal {
+        width: 200px;
+        height: 100px;
+        background-color: white;
+        border: 1px solid lightblue;
+        border-radius: 14px;
+
+        /* position: relative; */
+        /* position: absolute; body 기준 */
+        position: fixed;
+        z-index: 2;
+        padding: 20px;
+        text-align: center;
+
+        /* 정중앙 (1) - absolute*/
+        /* left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 300px; */
+
+        /* 정중앙 (2) - fixed */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      : > 가상 클래스
+      :: > 가상 요소
+    -->
+
+    <!--01 CSS diner-->
+
+    <!-- 02 CSS 선택자-->
+    <!--
+      CSS 선택자
+      1. 태그 이름
+      2. class
+      3. id
+      4. *    : 모든 것
+
+      5. 선택자 + " " + 선택자
+      6. 선택자 + "+" + 선택자  : 전자 선택자 다음에(직후) CSS 입히기
+      7. 선택자 + ">" + 선택자  : 직계 1촌 자손만 할당 / 직계 선택자
+      8. 선택자 + "~" + 선택자  : 전자 선택자 이후에(조건 맞으면) CSS 입히기
+      9. [] : 속성 선택자 / 해당 태그에 []을 지닌 태그만 CSS 입히기
+      10. [] : 속성 / 속성="" / 속성=$"" / 속성=^"" 등 정규식도 가능
+      11. :not()
+      12. .클래스 태그이름:nth-child(n번째) : 해당 태그 기준 n번째 적용
+      13. .클래스 클래스이름:nth-of-type(n번째) : 해당 클래스 기준 n번째 적용 (클래스형 호환성 보장)
+        - nth-last-of-type: 뒤에서 부터 n번째
+        - first-child / last-child
+        - only-child : 태그가 단 한개만 존재할 때 사용
+
+      14. ::first-line  : text 컨텐츠를 사용자에게 보여줄 때, 첫 번째 줄
+      15. ::first-letter : `` 첫 번째 글자
+      16: ::before : 해당 태그 '뒤'에 속성 content 와 같은 속성 붙히기 부여 
+      17: ::after : 해당 태그 '앞'에 속성 content 와 같은 속성 붙히기 부여
+    -->
+    <div class="high-test">
+      <p class="test" id="test">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+        laborum, illo quam maxime numquam possimus distinctio reprehenderit
+        dicta esse blanditiis? Aut, minima molestiae id molestias laboriosam
+        fugit vero delectus nobis.
+      </p>
+    </div>
+
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+      laborum, illo quam maxime numquam possimus distinctio reprehenderit dicta
+      esse blanditiis? Aut, minima molestiae id molestias laboriosam fugit vero
+      delectus nobis.
+    </h1>
+
+    <a href="" title="Naver">네이버</a>
+    <a href="" title="Google">구글</a>
+
+    <!-- 03 가상 클래스 -->
+    <!-- 선택자 5번 ~ 13번 -->
+
+    <a href="https://flukeout.github.io/">CSS diner</a>
+
+    <div class="bug">
+      <p>Lorem Lorem Lorem</p>
+      <p class="bug">Lorem Lorem Lorem</p>
+      <p>Lorem Lorem Lorem</p>
+    </div>
+
+    <!-- 04 가상 요소 -->
+    <!-- 선택자 14번 ~ 17번 -->
+    <div class="coding">
+      <p>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</p>
+    </div>
+    <br /><br /><br /><br /><br />
+
+    <!-- 05 position -->
+    <!--
+      absolute  : 부모태그 기준
+      fixed     : 브라우저 기준
+      
+      relative  : 원래 내 위치 / 일반적인 사용
+      static    : 기본 값 / 기준이 없음, 좌표 적용 x
+
+      (top, left, ...)
+    -->
+    <div class="box"></div>
+
+    <!-- 06 position - absolute, fixed-->
+    <div class="other">other</div>
+    <div class="parent">
+      parent
+      <div class="target">target</div>
+    </div>
+    <div class="other">other</div>
+
+    <!-- 07 position 속성과 z-index-->
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+    <div class="bg"></div>
+    <div class="modal">
+      정말 삭제하시겠습니까?
+      <br /><br />
+      <button>취소</button>
+      <button>삭제</button>
+    </div>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quod quis,
+      assumenda vel voluptate officiis, dolorem accusamus animi ipsum impedit
+      velit saepe sit tenetur! Consectetur molestias ipsum nemo alias assumenda?
+    </p>
+  </body>
+</html>

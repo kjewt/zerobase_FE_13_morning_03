@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./sample.css" />
+    <link rel="stylesheet" href="./sample_grid.css" />
+
+    <!-- margin 겹침 문제 관련 테스트-->
+    <link rel="stylesheet" href="./marginCollapsing.css" />
+    <style>
+      h1 {
+        margin: 0px;
+      }
+
+      p {
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 일단 div 태그로 공간 나누기-->
+    <!--
+      CSS 개발하기 전 div 태그로 나누기 필수
+      1. 유지 보수가 편해짐
+      2. 협업이 쉬워짐 (규칙)
+        - div, class, id 이름 작명할 때, 누가 봐도 이해 가능하도록
+        - header, footer, headerSearch, header-search
+        - 직관적으로 작명 = 명사 + 명사 사용
+         - 하이톤이나 언더바 등에 구분자, 혹은 낙타법
+    -->
+    <div class="headerSearch"></div>
+
+    <!-- 2. 상속 / 부모태그의 css는 자식도 영향 받음-->
+    <!-- 
+      상속이 되는 css태그
+       : 
+
+      상속 안되는 css태그
+        1. div에 border태그는 자식 태그 p에 적용 안 됨
+        2. 자식 태그 button도 부모 태그에 영향 받지 않음
+    -->
+    <div class="container">
+      <div class="parent">
+        <div class="child"></div>
+      </div>
+    </div>
+
+    <!-- 3. px, em, rem-->
+    <!--
+      일반적으로 `16px = 1em = 1rem`
+      확인법: F12 > 해당 태그 > Computed(show all) > font-size
+
+      크롬 기준 '글꼴 크기' 변경 시 rem만 변경됨(그래서 사용해야함)
+        => 클라이언트가 글꼴 크기를 변경하는 선택권을 주기 위해
+    -->
+    <div class="container">
+      <p class="px">PX / 0.0265583cm / 해상도, 화소</p>
+
+      <p class="em">
+        EM / 부모태그에게 font-size 속성이 있으면, 그 속성을 1em으로 계산
+        <br />
+        부모 태그 font-size가 16px이라면, 2em은 32px
+      </p>
+
+      <p class="rem">REM / html font-size 1rem</p>
+    </div>
+
+    <!-- 4. 레이아웃 - display_inline-->
+    <div class="container">
+      <div class="top">
+        <p>reer</p>
+      </div>
+      <div class="left">
+        <!-- 하나라도 지우면 레이아웃에 문제가 발생함-->
+        <!-- <p>reer</p> -->
+        <!-- 
+            이것이 인라인 방식의 문제
+            => vertical-align으로 해결 가능하지만 구시대적인 방법
+        -->
+      </div>
+      <div class="right">
+        <p>reer</p>
+      </div>
+      <div class="bottom">
+        <p>reer</p>
+      </div>
+    </div>
+
+    <!-- 5. 레이아웃 - float-->
+    <!--
+      : 레이아웃 배치를 위해 만들어진 css 속성 (모든 태그는 float: none으로 디폴트)
+      none(1층에서 사용이라면) /  left, right (2층에서 사용하는 느낌)
+
+      인라인 방식보단 많이 사용하지만, 그럼에도 최근에 다른 더 좋은 것들을 사용함
+      간단하게 정렬이 필요할 때 사용하는 방법
+    -->
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <!-- 6. 레이아웃 - flex-->
+    <!--
+      display: flex
+      개발자 도구에서 여러 정렬 방법 테스트 가능
+
+      절대값 width, height에 크기를 최대한 반영하려고 하나, 값이 초과하면 자동으로 배치
+      만약 크기 대비 마음에 안들 경우 'flex-wrap' 등 조정하는 등 사용 방안
+    -->
+    <div class="container">
+      <div class="top"></div>
+      <div class="flexBox">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+      <div class="bottom"></div>
+    </div>
+
+    <div class="flexBox2">
+      <span>제</span>
+      <span>로</span>
+      <span>코</span>
+      <span>딩</span>
+    </div>
+
+    <!-- 클래스 안에 특정 태그 CSS 변경 문법 사용-->
+    <div class="flexBox2">
+      <!-- 부모태그의 절대 크기에서 깨지지 않고 출력-->
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- 7. 레이아웃 - grid -->
+    <!--
+      display: grid
+      grid-template-columns / grid-template-rows
+      각각에 분할 하고 싶은 만큼 띄어쓰기 기준으로 값 명시 (fr, px, ...)
+
+      fr: 
+        1. 절대값 px을 제하고 남은 만큼 할당 (중간에 절대값 써도 비율적으로 할당 가능)
+        2. n대 n 비율로 생성하는 것도 가능 (ex 3:2 혹은 3:1 비율)
+
+      width, height 값을 없애도 구현 가능하며, 해당 코드를 없애도 됨
+      단, auto값을 정의해주는 것도 가능함
+    -->
+    <div class="container_grid">
+      <div class="top_grid"></div>
+      <div class="left_grid"></div>
+      <div class="right_grid"></div>
+      <div class="bottom_grid"></div>
+    </div>
+
+    <!-- 8. CSS 속성 - 폰트-->
+    <!--
+      font
+        1. font-style
+        2. font-weight
+          - lighter(100) / normal(400) / bold(700) / bolder(900)
+        3. font-variant : 문장 앞 글자 대문자로 변경, 종류 많음, 잘 사용하지 않음
+        4. font-size
+        5. line-height : 줄글 사이에 간격
+        6. font-family : 글꼴
+          - css에서 폰트 가져올 수 있음(@)
+          - 없으면 다음 폰트 적용: 원하는 폰트 첫 번째, 가장 범용적인 폰트 두 번째, ...
+        
+        font 안에 font 속성으로 한 줄로 표현 가능하긴 하지만, 나눠서 하는 방법
+    -->
+    <div class="container_null">
+      <p class="font">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero
+        ullam quisquam sint dolorem? Praesentium quisquam sint quasi nisi
+        inventore cupiditate reprehenderit, eum magni nostrum atque, quos
+        aperiam doloremque placeat.
+      </p>
+    </div>
+
+    <!-- 9. CSS 속성 - 공간-->
+    <!--
+      margin: border 영역 밖에 크기 
+      padding: border 영역 안에 크기
+       1) 시계 방향: top, right, bottom, left
+       2) 2개 쓸 경우: 위 아래
+
+      * 초보자들 마진과 패딩 값을 부여하지 않는 실수 유의
+
+      * margin, 부모 태그와 크기가 다른 문제 (경험 가장 난감했던 내 실제 경험)
+    -->
+    <div class="container2">
+      <p>제로코딩</p>
+    </div>
+
+    <!-- 10. margin 겹침 문제, margin collapsing -->
+    <!--
+        border 라는 시각적인 태그가 있어서 마진이 겹치지 않는다.
+        => margin태그 사이에 '시각적인 요소'가 없으면 겹치는 현상이 발생함
+
+        또, margin 정도가 다른 상태에서 겹치면 큰 값으로 적용함
+
+        해결 방안/해소 방법: margin 사이에 시각적인 요소를 추가
+    -->
+    <div class="container_margin_test">
+      <h1>안녕하세요</h1>
+      <h1>SIU 입니다.</h1>
+    </div>
+
+    <div class="container_margin_test">
+      <div class="child_margin_test">마진 겹침 문제 해결 방안</div>
+      <p class="zero">제로</p>
+      <p class="coding">코딩</p>
+    </div>
+  </body>
+</html>

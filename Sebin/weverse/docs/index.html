@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://ssl.pstatic.net/static/wevweb/2_6_0_03091022/public/favicon.ico"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Weverse</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="fixed-header">
+        <div class="header-logo">
+          <a href="#">
+            <img
+              src="data:image/png;base64,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"
+              alt="weverse"
+            />
+          </a>
+        </div>
+        <div class="header-btn">
+          <a href="#">
+            <button>Sign in</button>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- // header -->
+
+    <!-- main -->
+    <main>
+      <div class="container">
+        <!-- banner -->
+        <div class="banner">
+          <img
+            src="https://ssl.pstatic.net/static/wevweb/assets/web/home_banner_slogan.gif"
+            alt="wevers"
+            height="299px"
+          />
+        </div>
+        <!-- //banner -->
+
+        <!-- artist-content -->
+        <div class="artist-content">
+          <div class="title">
+            <p>새로운 아티스트를 만나보세요!</p>
+          </div>
+
+          <div class="artist-box">
+            <ul class="artist-list">
+              <li class="artist-item">
+                <a href="#">
+                  <img
+                    src="https://weverse-phinf.pstatic.net/MjAyMjA3MTVfMTUz/MDAxNjU3ODcyOTY1ODMx.PULT0VTdXGMf4oGQnU48H94SEd4-eZy3AChzO_655hog.u3Dljp7bb8CF3Uyq0JVwDn6fjOHr-t9GzsvPomZCzO4g.PNG/921585575854487104c94755-697c-4ae3-a056-b442960bc317.png?type=f416_416"
+                    alt="세븐틴"
+                    class="artist-img"
+                    width="208px"
+                    height="208px"
+                    class="artist-img"
+                  />
+                  <div class="artist-logo">
+                    <img
+                      src="https://weverse-phinf.pstatic.net/MjAyMzAxMTNfMjE1/MDAxNjczNTM1NzQ3MjI3.-zz8L-HnBiK0p54wm9ve_0a2k3uMzW842QLZdN0KbQQg.dj69gfTf4d6EbrYKAjoGOrSeQyPNpwa2I4Ze9GgE69cg.JPEG/4b66a716-4b5a-4994-84a9-2165584c0ad7.jpeg?type=s86"
+                      alt="세븐틴"
+                      width="44px"
+                      height="44px"
+                    />
+                  </div>
+                  <div class="artist-name">
+                    <p>SEVENTEEN</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="artist-item">
+                <a href="#">
+                  <img
+                    src="https://weverse-phinf.pstatic.net/MjAyMjA3MDFfNjQg/MDAxNjU2NjMyNzc3NDE2.M4za4UBKALElOqHeYj_D2m3P4CYebc5BxfAl6L1ZHyUg.E_udXZAelzRzcHakf6KNs18vplrZWgfXq0P_D3M-6aMg.PNG/41117602444031295acf6efdb-9e31-45a1-9bcd-e85434981c59.png?type=f416_416"
+                    alt="방탄소년단"
+                    class="artist-img"
+                    width="208px"
+                    height="208px"
+                    class="artist-img"
+                  />
+                  <div class="artist-logo">
+                    <img
+                      src="https://weverse-phinf.pstatic.net/MjAyMjA2MTZfMzkg/MDAxNjU1MzU2MzM4NDQ2.0eKfyACqV7QGlrMyJyi4QxYD4io-oJmy_5IuNk-7a4Qg.mmsCToDKo65_qWZaosny7fnuLGwe98m_nS41hblcigQg.JPEG/f2d19e90afcb4a8ba7afeb263555edf9320.jpg?type=s86"
+                      alt="방탄소년다"
+                      width="44px"
+                      height="44px"
+                    />
+                  </div>
+                  <div class="artist-name">
+                    <p>BTS</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="artist-item">
+                <a href="#">
+                  <img
+                    src="https://weverse-phinf.pstatic.net/MjAyMjA3MTRfNzMg/MDAxNjU3ODA5MzYyMjM3.njgBrNPsd0zKBF0Nh_D3-0_1fFNi4_dPEeK7bqe2YRYg.iPUGmm47grGC0MclXToyLikv2hW1u6srDPWz-FlQtrAg.PNG/915225217979772892160970-e2eb-4578-889c-0c98d7388118.png?type=f416_416"
+                    alt="앤하이픈"
+                    class="artist-img"
+                    width="208px"
+                    height="208px"
+                    class="artist-img"
+                  />
+                  <div class="artist-logo">
+                    <img
+                      src="https://weverse-phinf.pstatic.net/MjAyMjA2MTZfMTI0/MDAxNjU1MzU2MzM4MTEw.RVWqzZh1nA3sU8L2ql1WE7YRQ0gAUXZ3LH3jWv2qHZQg.s7tEQA7D_0b3EI8-ht8UMur8WXWegeID88RAC0CpEhgg.JPEG/897bee077e0448f1a53e9f731668d978163.jpg?type=s86"
+                      alt="앤하이픈"
+                      width="44px"
+                      height="44px"
+                    />
+                  </div>
+                  <div class="artist-name">
+                    <p>ENHYPEN</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="artist-item">
+                <a href="#">
+                  <img
+                    src="https://weverse-phinf.pstatic.net/MjAyMjA5MTZfMTU3/MDAxNjYzMzAwNTMwNDg0.oWitHeFDQwy5XciQ0h2bxqq14H-a7GqzdKSwc5RqMU0g.Qo3Np6u6Y3chZy_xIrGlwANsJpphdm-FVGGar_5aoeQg.PNG/45377809542097982318a06ef-10d1-48da-888d-b1d1c97f89ca.png?type=f416_416"
+                    alt="블랙핑크"
+                    class="artist-img"
+                    width="208px"
+                    height="208px"
+                    class="artist-img"
+                  />
+                  <div class="artist-logo">
+                    <img
+                      src="https://weverse-phinf.pstatic.net/MjAyMjA3MDhfNjkg/MDAxNjU3MjgwNzY4MDQ3.HM0rpIgO1GnUSUaabzaD3l4jg8F_gdrkyi-Tt7dI4HQg.fHyU_ZTr5k0KmQBthUpYJlV3wdgxjb22C3hRAYWD4yog.PNG/1462206286722894312cc0914-f1be-4a55-9f0a-233c6554bb6d.png?type=s86"
+                      alt="블랙핑크"
+                      width="44px"
+                      height="44px"
+                    />
+                  </div>
+                  <div class="artist-name">
+                    <p>BLACKPINK</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="artist-item">
+                <a href="#">
+                  <img
+                    src="https://weverse-phinf.pstatic.net/MjAyMzAxMDJfNjcg/MDAxNjcyNjQ3ODQ2MDUw.Hd3M1khIYVRIoKlkOiZ6ZaV5GKRcuiejNDEvu7oZDX0g.hJaGBkxuHnP_V64qtXkLc87gj51mhMOe-IB32R2AMrwg.PNG/6151402501766108283678f46-9234-4e63-9ad9-336a3aa3e1e2.png?type=f416_416"
+                    alt="뉴진스"
+                    class="artist-img"
+                    width="208px"
+                    height="208px"
+                    class="artist-img"
+                  />
+                  <div class="artist-logo">
+                    <img
+                      src="https://weverse-phinf.pstatic.net/MjAyMzAxMDJfMTYz/MDAxNjcyNjQ5OTU3NzA4.IlnHbId2d1e2KPsPIfRryoPcPxtz_SIRPx3S_eeoTGgg.-XDhu1eAQ6jZxl6Eb0-xdhK7D2Fz-IEdmrprGxIYqckg.JPEG/11c8dea6-3c8f-4577-b817-9adfa9fb61ad.jpeg?type=s86"
+                      alt="뉴진스"
+                      width="44px"
+                      height="44px"
+                    />
+                  </div>
+                  <div class="artist-name">
+                    <p>NewJeans</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="artist-item">
+                <a href="#">
+                  <img
+                    src="https://weverse-phinf.pstatic.net/MjAyMjA3MDhfODMg/MDAxNjU3MjY4NTE5ODY5.cvhyg36fbH_R8Q_t8eeQnisXFiHGqaj7SaqJRiNhoI8g.vDMO5ZfRCfY4gTapIg5WcvdqXA04ZQY9KbD7z8yplaUg.PNG/14609814624005194fd4e1601-640f-4289-85f9-7a84b1148da6.png?type=f416_416"
+                    alt="위너"
+                    class="artist-img"
+                    width="208px"
+                    height="208px"
+                    class="artist-img"
+                  />
+                  <div class="artist-logo">
+                    <img
+                      src="https://weverse-phinf.pstatic.net/MjAyMjA3MDhfNTEg/MDAxNjU3MjY4NTU5OTA1.IFS7t4tALad9oxgIRBvkLCtTCe_e81WzLoQsZymJCr8g.spQqGZBDc0hX5XBK31JziWm_eSTIDt1uSN9JrBfXUGcg.PNG/886575657676074b14db0cb-ad6c-420a-b9d3-050e2bc63f8b.png?type=s86"
+                      alt="위너"
+                      width="44px"
+                      height="44px"
+                    />
+                  </div>
+                  <div class="artist-name">
+                    <p>WINNER</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="artist-item">
+                <a href="#">
+                  <img
+                    src="https://weverse-phinf.pstatic.net/MjAyMjA4MDRfMTgw/MDAxNjU5NTc1NjQ4Mzk4.tybvZ1fkvatRqLCot5-H_-xzczW59PoIVyd_FSDhpi8g.mWLBrNZCCR547Np6o-B-2pIzvzKbXpli5At-8VlqDSwg.PNG/44060456434005330a18c29d6-7e17-4f86-be75-b789d7d839de.png?type=f416_416"
+                    alt="오마이걸"
+                    class="artist-img"
+                    width="208px"
+                    height="208px"
+                    class="artist-img"
+                  />
+                  <div class="artist-logo">
+                    <img
+                      src="https://weverse-phinf.pstatic.net/MjAyMjA4MDRfMTQ4/MDAxNjU5NTc1NzUyMzg3.wpYX_NUto_YMTRNDGj30YqePCOL5i4LGnUboJy45Whkg.GzRncP34uhPsxdHm6dQRXcOodFInEkW5uFu-Id9yt8Eg.PNG/440605994186232321a6a52f7-15a3-4a59-9f8c-f565654efeef.png?type=s86"
+                      alt="오마이걸"
+                      width="44px"
+                      height="44px"
+                    />
+                  </div>
+                  <div class="artist-name">
+                    <p>OH MY GIRL</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="artist-item">
+                <a href="#">
+                  <img
+                    src="https://weverse-phinf.pstatic.net/MjAyMzAyMDdfMjYz/MDAxNjc1NzUyNDYzNTE0.WN-D0d1kCvW1a3Vctmdy4BVet07hSCNzWicCjAqXsKwg.LI-ovMUW_4fH7n6H9KXT8_Qzi-sF79CAjTbxRtXfn7sg.PNG/57829397575101598d0770401-8d35-49e8-8480-2c889c1214b2.png?type=f416_416"
+                    alt="티앤엑스"
+                    class="artist-img"
+                    width="208px"
+                    height="208px"
+                    class="artist-img"
+                  />
+                  <div class="artist-logo">
+                    <img
+                      src="https://weverse-phinf.pstatic.net/MjAyMjA3MTdfNTgg/MDAxNjU4MDM4ODE2NjU3.63RqJUPemQyk7cAdoin4JA5NKwr9p5fUNwb_MMcQPVcg.PW646DpyZPDnDza_wHLh2-tUAN_HG_zmxLX_TmwJLjwg.PNG/53612877941757160e06b99c5-14c7-416d-8fc1-13cf22d450e4.png?type=s86"
+                      alt="티앤엑스"
+                      width="44px"
+                      height="44px"
+                    />
+                  </div>
+                  <div class="artist-name">
+                    <p>TNX</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- // artist-content -->
+      </div>
+    </main>
+    <!-- // main -->
+
+    <!-- footer -->
+    <footer>
+      <div class="fixed-footer-alert">
+        <div class="desc-box">
+          <p>
+            자동 로그인과 편리한 위버스 경험을 위해 쿠키 수집에 동의해주세요.
+            (자세히보기)
+          </p>
+        </div>
+        <div class="agreement-box">
+          <div>
+            <a href="#">동의하지 않고 계속하기</a>
+          </div>
+          <div class="btn-box">
+            <button class="btn-select">선택 동의</button>
+            <button class="btn-all">전체 동의</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- // footer -->
+  </body>
+</html>
